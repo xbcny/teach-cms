@@ -1,9 +1,9 @@
-import { createStore } from "vuex";
+import useLoginStore from './modules/login'
 
-export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+const useStore = () => {
+  return {
+    login: useLoginStore()
+  }
+}
+
+export default useStore
