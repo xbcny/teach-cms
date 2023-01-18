@@ -19,7 +19,7 @@ const useLoginStore = defineStore('login', () => {
     }
   }
   async function accountRegisterAction(payload: any) {
-    const result = await userRegisterRequest(payload)
+    await userRegisterRequest(payload)
   }
   return { user, accountLoginAction, accountRegisterAction }
 })

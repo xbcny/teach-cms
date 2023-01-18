@@ -62,36 +62,43 @@ const submitForm = (account: any) => {
 
 <template>
   <div class="account">
-    <el-tab-pane class="login-pane" label="登录">
-      <el-form label-width="80px" :rules="rules" :model="user" ref="formRef">
-        <el-form-item label="用户名" prop="name">
-          <el-input v-model="user.name" />
-        </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="user.password" />
-        </el-form-item>
-        <div class="operate">
-          <el-checkbox v-model="isKeepPassword" change="checkboxChangeAction"
-            >记住密码</el-checkbox
-          >
-          <el-link type="primary" @click="forgetPassword">忘记密码</el-link>
-        </div>
-        <div class="btn">
-          <el-button @click="submitForm(user)" class="btn-login" type="primary"
-            >立即登录</el-button
-          >
-        </div>
-      </el-form>
-    </el-tab-pane>
+    <el-form
+      label-width="80px"
+      :rules="rules"
+      :model="user"
+      ref="formRef"
+      class="demo-ruleForm"
+    >
+      <el-form-item label="用户名" prop="name">
+        <el-input v-model="user.name" />
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input v-model="user.password" />
+      </el-form-item>
+      <div class="operate">
+        <el-checkbox v-model="isKeepPassword" change="checkboxChangeAction"
+          >记住密码</el-checkbox
+        >
+        <el-link type="primary" @click="forgetPassword">忘记密码</el-link>
+      </div>
+      <div class="btn">
+        <el-button @click="submitForm(user)" class="btn-login" type="primary"
+          >立即登录</el-button
+        >
+      </div>
+    </el-form>
   </div>
 </template>
 
 <style scoped lang="less">
 .account {
-  width: 350px;
-
   .el-form {
     padding: 15px 30px;
+
+    .el-form-item {
+      display: flex;
+      margin-bottom: 20px;
+    }
   }
   .operate {
     display: flex;

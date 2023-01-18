@@ -8,8 +8,12 @@ import Register from './cpns/register.vue'
   <div class="login">
     <h2>教学科研信息管理系统</h2>
     <el-tabs class="el-tabs" type="border-card" stretch>
-      <Account></Account>
-      <Register></Register>
+      <el-tab-pane class="login-pane" label="登录">
+        <Account></Account>
+      </el-tab-pane>
+      <el-tab-pane class="register-pane" label="注册">
+        <Register></Register>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -21,5 +25,8 @@ import Register from './cpns/register.vue'
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .el-tabs {
+    width: 400px;
+  }
 }
 </style>
